@@ -6,15 +6,17 @@ import axios from "axios";
 //3º) Creamos el servicio mediante axios.create() con la info de las cabeceras y la URL
 
 //Recogemos el usuario del localStorage y lo convertimos en JSON
-const userLocal = localStorage.getItem("user");
-const parseUser = JSON.parse(userLocal);
+/* const userLocal = localStorage.getItem("user");
+const parseUser = JSON.parse(userLocal); */
 
+//Creamos una funcion updateToken() que nos devuelva el valor del token si existe el usuario, para que no falle el localStorage y la asincronia
+import { updateToken } from "../utils/updateToken";
 //Creamos las cabeceras del servicio, con la información que contendrán
 const ApiHeaders = {
   Accept: "application/json",
   "Content-Type": "application/json",
   "Acces-Control-Allow-Origin": "*",
-  Authorization: `Bearer ${parseUser?.token}`, //---> Obtenemos el token del usuario convertido a objeto para darle la authenticacion
+  Authorization: `Bearer ${updateToken()}`, //---> Obtenemos el token del usuario convertido a objeto para darle la authenticacion
 };
 
 //Creamos el servicio axios.create con los datos que necesita: la URL, las cabeceras y el tiempo de respuesta
