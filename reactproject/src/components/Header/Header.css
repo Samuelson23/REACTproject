@@ -67,6 +67,10 @@ header {
   display: none;
 }
 
+/* .icons-ul .burger-icon:hover .desplegable {
+
+} */
+
 @media screen and (max-width: 840px) {
   .NavIcons {
     display: none;
