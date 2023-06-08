@@ -26,7 +26,7 @@ export const loginUser = async (dataForm) => {
 };
 // CHECK CODE ------------------
 export const checkCode = async (dataForm) => {
-  return API.post("/user/checkUser", dataForm)
+  return API.post("/user/checkCode", dataForm)
     .then((res) => res)
     .catch((error) => {
       return error;

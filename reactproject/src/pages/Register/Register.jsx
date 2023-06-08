@@ -3,6 +3,9 @@ import "./Register.css";
 import React, { useEffect, useState } from "react";
 import { registerUser } from "../../services/user.service";
 import Uploadfile from "../../components/Uploadfile/Uploadfile";
+import { useAuth } from "../../context/AuthContext";
+import useUserError from "../../Hooks/useError/useUserError";
+import { useNavigate } from "react-router-dom";
 
 
 //1º) Crear el html de lo que será la estructura del register para darle un poco de forma
@@ -13,8 +16,9 @@ const Register = () => {
   const { register, handleSubmit } = useForm(); //handleSubmit nos permite controlar el formulario mediante funciones, creo
   const [resp, setResp] = useState({}) //Estado en el que seteamos la respuesta y hacemos la llamada al servicio con la informacion recogida en los inputs
   const [send, setSend] = useState() //Estado para deshabilitar el boton de registrar hacemos la llamada al servicio
-
-
+  const {user, setUser} = useAuth()
+  const {registerOK, setRegisterOK} = useState(false)
+  const navigate = useNavigate()
   //Creamos la funcion formSubmit que recopila la info de los inputs y le añade la imagen. Junto a handleSubmit nos permite recopilar toda la 
   //informacion que recogemos por los inputs (formData)
   const formSubmit = async (formData) => {
@@ -40,10 +44,8 @@ const Register = () => {
   }
 
 
-  useEffect(()=>{
-    console.log(resp)
-  },[resp])
 
+ (resp.status==200) && navigate("/checkCode")
   //form onSubmit={handleSubmit(formSubmit)}  -> handleSubmit + formSubmit recopilan toda la info recogida en los inputs
   return (
     <div className="divFormulario">
