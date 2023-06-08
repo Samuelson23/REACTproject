@@ -6,8 +6,7 @@ import Profile from './components/Profile/Profile.jsx'
 import Dashboard from './components/Dashboard/Dashboard.jsx'
 import Events from './components/Events/Events.jsx'
 import Login from './components/Login/Login.jsx'
-
-
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

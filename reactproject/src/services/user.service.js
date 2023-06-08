@@ -1,3 +1,4 @@
+import axios from "axios";
 import { API } from "./service.config";
 
 //Nos traemos el servicio (API) para crear cada uno de los servicios que tiene que hacer nuestra pagina
