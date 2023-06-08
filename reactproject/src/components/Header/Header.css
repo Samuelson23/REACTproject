@@ -1,29 +1,25 @@
 header {
-  height: 20vh;
+  height: 16vh;
   width: 100vw;
   background-color:#063954;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .NavIcons {
   display:flex;
+  align-items: center;
   justify-content: space-between;
 }
 
 img{
   width: 100px;
-  background-color: #063954;
+  background-color: transparent;
 }
 
 
 
-  @media (max-width: 550px) {
-    header {
-      flex-direction: column;
-    }
-
-}
 
 
