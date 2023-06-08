@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
-#root {
-  height: 100vh;
+main {
+  min-height: 74vh;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }

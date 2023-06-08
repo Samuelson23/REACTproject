@@ -6,6 +6,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  width: 100%;
 }
 
 .logo-container {
@@ -41,7 +42,39 @@ header {
   background-color: transparent;
 }
 
+#menu-icon {
+  display: none;
+  cursor: pointer;
+}
 
+.icons-ul {
+  display: none;
+}
+
+.burger-icon {
+  border-radius: 50%;
+  margin-top: 13px;
+  margin-right: 10px;
+}
+
+.burger-icon:hover {
+  .desplegable {
+    display: block;
+  }
+}
+
+.desplegable {
+  display: none;
+}
+
+@media screen and (max-width: 840px) {
+  .NavIcons {
+    display: none;
+  }
+  .icons-ul {
+    display: flex;
+  }
+}
 
 
 
