@@ -7,9 +7,7 @@ import { API } from "./service.config";
 // REGISTER ---------------------
 
 export const registerUser = async (dataForm) => {
-  return API.post("/user/register", dataForm, {
-    headers: { "Content-Type": "multipart/form-data" },
-  })
+  return API.post("/user/register", dataForm)
     .then((res) => res)
     .catch((error) => {
       return error;

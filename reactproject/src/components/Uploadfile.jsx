@@ -57,7 +57,7 @@ const Uploadfile = ({ registerForm }) => {
         document.getElementById("start").classList.remove("hidden");
         document.getElementById("response").classList.add("hidden");
         console.log(document.getElementById("file-upload-form"))
-        //document.getElementById("file-upload-form").reset();
+        document.getElementById("file-upload-form").reset();
       }
     }
     if (window.File && window.FileList && window.FileReader) {

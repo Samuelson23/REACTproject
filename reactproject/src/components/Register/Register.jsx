@@ -17,7 +17,7 @@ const Register = () => {
   //Creamos la funcion formSubmit que recopila la info de los inputs y le añade la imagen. Junto a handleSubmit nos permite recopilar toda la 
   //informacion que recogemos por los inputs (formData)
   const formSubmit = async (formData) => {
-    const inputFile = document.getElementById("file-upload").files;
+    /* const inputFile = document.getElementById("file-upload").files;
     console.log(inputFile)
     let customData;
 
@@ -30,7 +30,11 @@ const Register = () => {
       setSend(true)
       setResp(await registerUser(formData))
       setSend(false)
-    }
+    } */
+    console.log(formData)
+    setSend(true)
+    setResp(await registerUser(formData))
+    setSend(false)
 
   }
 
