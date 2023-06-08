@@ -1,5 +1,8 @@
 .event-page {
   text-align: center;
+background-color: #E2E7D3;
+color:#063954;
+  
 }
 
 .event-list {
@@ -14,7 +17,8 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #f5f5f5;
+  background-color:#063954;
+  color:#E2E7D3;
 }
 
 .event h2 {
@@ -22,5 +26,6 @@
 }
 
 .event p {
-  color: #666;
+  color: #E2E7D3;
+  
 }
