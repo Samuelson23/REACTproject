@@ -2,7 +2,8 @@ import { useForm } from "react-hook-form";
 import "./Register.css";
 import React, { useEffect, useState } from "react";
 import { registerUser } from "../../services/user.service";
-import Uploadfile from "../Uploadfile";
+import Uploadfile from "../../components/Uploadfile/Uploadfile";
+
 
 //1º) Crear el html de lo que será la estructura del register para darle un poco de forma
 //2º) Importar la libreria Hook-form para poder gestionar bien los formularios
@@ -17,7 +18,7 @@ const Register = () => {
   //Creamos la funcion formSubmit que recopila la info de los inputs y le añade la imagen. Junto a handleSubmit nos permite recopilar toda la 
   //informacion que recogemos por los inputs (formData)
   const formSubmit = async (formData) => {
-    /* const inputFile = document.getElementById("file-upload").files;
+    const inputFile = document.getElementById("file-upload").files;
     console.log(inputFile)
     let customData;
 
@@ -30,11 +31,11 @@ const Register = () => {
       setSend(true)
       setResp(await registerUser(formData))
       setSend(false)
-    } */
-    console.log(formData)
+    }
+   /*  console.log(formData)
     setSend(true)
     setResp(await registerUser(formData))
-    setSend(false)
+    setSend(false) */
 
   }
 

@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import Register from './components/Register/Register'
+import Register from './pages/Register/Register'
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import { Outlet } from 'react-router-dom';
 
 
 
@@ -14,7 +15,7 @@ function App() {
     <>
 
       <Header/>
-      <Register/>
+      <main><Register/></main>
       <Footer/>
 
 
