@@ -1,22 +1,21 @@
 header {
-    height: 20vh;
-    width: 100vw;
-    background-color:#063954;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-  }
-  .NavIcons {
-    display:flex;
-    justify-content: space-between;
+  height: 20vh;
+  width: 100vw;
+  background-color:#063954;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
 
-  
-  }
+.NavIcons {
+  display:flex;
+  justify-content: space-between;
+}
 
-  img{
-width: 100px;
-background-color: #063954;
-  }
+img{
+  width: 100px;
+  background-color: #063954;
+}
 
 
 
