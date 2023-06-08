@@ -7,7 +7,7 @@ const AuthContext = createContext()
 //Creamos el provider del contexto que engloba a las rutas. En el almacenaremos (memorizaremos con useMemo) toda
 // la informacion que hemos ido generando, como los datos del usuario o las funcionalidades extras del login o logout
 
-export const AuthContextProvider = ({childer}) => {
+export const AuthContextProvider = ({children}) => {
    const navigate = useNavigate();  //creamos el navigate para ir a las rutas
 
    //Creamos un estado que almacenará la informacion del user

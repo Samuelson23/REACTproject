@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Header/>
-      <main><Register/></main>
+      <main><Outlet/></main>
       <Footer/>
     </>
   )
