@@ -12,14 +12,9 @@ function App() {
 
   return (
     <>
-
       <Header/>
       <Register/>
       <Footer/>
-
-
-
-
     </>
   )
 }
