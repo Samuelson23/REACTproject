@@ -27,6 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/events" element={<Events />} />
           <Route path="/login" element={<Login />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register/>}/>
           <Route path="/verifyCode" />
           <Route path="/resendCode" />
           <Route path="/forgotPassword"/>
