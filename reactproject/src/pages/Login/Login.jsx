@@ -16,8 +16,7 @@ const Login = () => {
   }
   return (
     <div className="divFormulario">
-      <h2>Sign UP!</h2>
-      <p>Sign for free if you want to see all content</p>
+      <h2>LOGIN/REGISTER</h2>
       <form onSubmit={handleSubmit(formSubmit)}> 
         <div className="inputContainer">
           <label htmlFor="custom-input">email:</label>

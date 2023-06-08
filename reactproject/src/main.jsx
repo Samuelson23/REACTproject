@@ -10,6 +10,8 @@ import Login from './pages/Login/Login.jsx'
 import Register from './pages/Register/Register.jsx'
 import Home from './pages/Home/Home.jsx'
 import { AuthContextProvider } from './context/AuthContext.jsx'
+import CheckCode from './pages/CheckCode/CheckCode.jsx'
+
 
 
 
@@ -28,7 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/login" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register/>}/>
-          <Route path="/verifyCode" />
+          <Route path="/checkCode" element={<CheckCode/>} />
           <Route path="/resendCode" />
           <Route path="/forgotPassword"/>
           <Route path="/dashboard"/>
