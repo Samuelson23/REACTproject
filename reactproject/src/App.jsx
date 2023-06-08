@@ -13,14 +13,9 @@ function App() {
 
   return (
     <>
-
       <Header/>
       <main><Register/></main>
       <Footer/>
-
-
-
-
     </>
   )
 }
