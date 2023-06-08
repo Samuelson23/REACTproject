@@ -13,7 +13,7 @@ const Header = () => {
         <img
             src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686179496/proyectoREACT/hotellogo_qcrsyu.png"
             alt="logo"
-            className="Logo"
+            className="logo"
         />
 
         <h1 className="hotel-title">HOTEL CASTEFA</h1>
@@ -23,41 +23,35 @@ const Header = () => {
       <nav className="NavIcons">
 
     <NavLink to="/dashboard">
-      <button> 
         <img
           className="nav-img"
           src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686179869/proyectoREACT/smart-home_vsyo0i.png"
           alt="Home"
         />
-      </button>
-    
     </NavLink>
 
     <NavLink to="/Events">
-      <button>
         <img
+          className="nav-img"
           src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686180327/proyectoREACT/calendar-check_rgbc42.png"
           alt="Events"
         />
-      </button>
     </NavLink>
 
     <NavLink to="/Profile">
-      <button>
         <img
+          className="nav-img"
           src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686180319/proyectoREACT/user_hnxorp.png"
           alt="Profile"
         />
-      </button>
     </NavLink>  
 
     <NavLink to="/Logout">
-      <button>
         <img
+          className="nav-img"
           src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686180517/proyectoREACT/logout_mxofcx.png"
           alt="Logout"
         />
-      </button>
     </NavLink>
 
   </nav>

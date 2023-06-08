@@ -14,7 +14,11 @@ header {
   justify-content: space-between;
 }
 
-img{
+.logo {
+  width: 100px;
+}
+
+.nav-img{
   width: 100px;
   background-color: transparent;
 }
