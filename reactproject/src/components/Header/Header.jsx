@@ -8,7 +8,7 @@ const Header = () => {
 
     <header>
 
-      <div>
+      <div className="logo-container">
 
         <img
             src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686179496/proyectoREACT/hotellogo_qcrsyu.png"
