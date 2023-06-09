@@ -8,5 +8,5 @@
 
 .divHome > button:hover {
     cursor: pointer;
-    background-color:grey;
+    background-color:#CCCCCC;
 }
