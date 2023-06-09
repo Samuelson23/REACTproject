@@ -33,10 +33,21 @@ export const AuthContextProvider = ({children}) => {
     }
    })
 
-   //Creamos una funcion puente para setear datos en caso de tener problemas con la asincronia
-   //INCOMPLETA pq de momento no sirve para nada
+   //Creamos una funcion puente para recoger los datos guardados en el localStorage cuando mandamos la respuesta 200 en el registro
+   //y esos datos los seteamos en allUser para tenerlos en el contexto global. 
+   //Con esta funcion puente nos evitamos problemas de asincronia con los estados de React
    const bridgeData = (state) => {
+    const data = localStorage.getItem("data")
+    console.log
+    const parseData = JSON.parse(data)
 
+    switch(state){
+        case "dataUser":
+            setAllUser(parseData)
+            localStorage.removeItem("data")
+            break;
+        default: break;
+    }
    }
 
    //Creamos la funcion que recoge los datos del login, los almacena en el local storage
@@ -56,7 +67,7 @@ export const AuthContextProvider = ({children}) => {
    }
 
    const value = useMemo(()=>({
-    user,setUser,userLogin,logout,allUser,setAllUser
+    user,setUser,userLogin,logout,allUser,setAllUser, bridgeData
    }),[user,allUser])
 
    //Despues de todas las funcionalidades que puede albergar el provider (login,logout,almacenar user...etc)

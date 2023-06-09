@@ -19,7 +19,7 @@ const Register = () => {
   const { register, handleSubmit } = useForm(); //handleSubmit nos permite controlar el formulario mediante funciones, creo
   const [resp, setResp] = useState({}) //Estado en el que seteamos la respuesta y hacemos la llamada al servicio con la informacion recogida en los inputs
   const [send, setSend] = useState() //Estado para deshabilitar el boton de registrar hacemos la llamada al servicio
-  const {user, setUser} = useAuth()
+  const {bridgeData} = useAuth()
   const [registerOk, setRegisterOk] = useState(false)
 
   const navigate = useNavigate()
@@ -49,9 +49,10 @@ const Register = () => {
   useEffect(() => {
     console.log(resp)
     useUserError(resp, setRegisterOk)
-    console.log(registerOk)
-    
-  },[resp]);
+    bridgeData("dataUser")  
+  
+  },[resp,registerOk]);
+
 
 //Si la respuesta es un 200 quiere decir que se ha registrado correctamente asique navegamos a la pagina checkCode para verificarlo
 (registerOk) && navigate("/checkCode")

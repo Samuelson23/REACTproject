@@ -7,8 +7,9 @@ import { checkCode } from '../../services/user.service'
 const CheckCode = () => {
     const navigate = useNavigate()
     const {register, handleSubmit} = useForm()
-    const {send, setSend} = useState(false)
-    const {resp, setResp} = useState()
+    const [send, setSend] = useState(false)
+    const [resp, setResp] = useState()
+    const [codeOk, setCodeOk] = useState(false)
 
     const formSubmit = async (formData) => {    
         setSend(true)
@@ -26,15 +27,15 @@ const CheckCode = () => {
           <input
             type="text"
             className="inputUser"
-            name="email"
-            id="email"
+            name="confirmationCode"
+            id="confirmationCode"
             autoComplete="false"
             {...register("confirmationCode", { required: true })}
           />
         </div>
         
-        <button type="submit" disabled={send} style={{background: "#49c1a388"}}>LOGIN</button>
-        <button className="button" onClick={()=>navigate("/dashboard")}>CHECK</button>
+        <button type="submit" disabled={send} style={{background: "#49c1a388"}}>CHECK</button>
+        
       </form>
     </div>
   )

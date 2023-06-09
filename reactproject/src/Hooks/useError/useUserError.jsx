@@ -1,10 +1,12 @@
 import Swal from "sweetalert2"
 
 const useUserError = (res, setRegisterOk) => {
+    console.log("ressss", res?.data)
     
     //STATUS 200 ----> REGISTRADO CORRECTAMENTE
     if(res?.status == 200){
-        setRegisterOk(true)
+        localStorage.setItem("user", JSON.stringify(res.data))
+        setRegisterOk(()=>true)
         Swal.fire({
             icon:'success',
             title: 'Register correctly!',
