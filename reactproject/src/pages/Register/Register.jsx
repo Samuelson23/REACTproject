@@ -6,6 +6,7 @@ import Uploadfile from "../../components/Uploadfile/Uploadfile";
 import { useAuth } from "../../context/AuthContext";
 import useUserError from "../../Hooks/useError/useUserError";
 import { useNavigate } from "react-router-dom";
+import "./Register.css";
 
 //1º) Crear el html de lo que será la estructura del register para darle un poco de forma
 //2º) Importar la libreria Hook-form para poder gestionar bien los formularios
@@ -62,8 +63,9 @@ const Register = () => {
       <p>Sign for free if you want to see all content</p>
       <form onSubmit={handleSubmit(formSubmit)}> 
         <div className="inputContainer">
-          <label htmlFor="custom-input">Username:</label>
           <input
+          placeholder="Username"
+            htmlFor="custom-input"
             type="text"
             className="inputUser"
             name="name"
@@ -72,9 +74,10 @@ const Register = () => {
             {...register("name", { required: true })}
           />
 
-          <label htmlFor="custom-input">email:</label>
           <input
-            type="text"
+          placeholder="Email"
+          htmlFor="custom-input"
+            type="email"
             className="inputUser"
             name="email"
             id="email"
@@ -82,17 +85,19 @@ const Register = () => {
             {...register("email", { required: true })}
           />
 
-          <label htmlFor="custom-input">Password:</label>
           <input
-            type="text"
+            htmlFor="custom-input"
+            type="password"
+            placeholder="Password"
             className="inputUser"
             name="password"
             id="password"
             autoComplete="false"
             {...register("password", { required: true })}
           />
-          <div className="divInputGenero">
-              <label htmlFor="hombre" className="label-radio hombre">
+          <div className="divInputGender">
+              <div className="radio-container">
+              <label htmlFor="hombre" className="label-radio">
                 Hombre
               </label>
               <input
@@ -102,7 +107,9 @@ const Register = () => {
                 value="hombre"
                 {...register("gender")}
               />
-              <label htmlFor="mujer" className="label-radio mujer">
+              </div>
+              <div className="radio-container">
+              <label htmlFor="mujer" className="label-radio">
                 Mujer
               </label>
               <input
@@ -112,11 +119,12 @@ const Register = () => {
                 value="mujer"
                 {...register("gender")}
               />
+              </div>
             </div>
             <Uploadfile/>
         </div>
         
-        <button type="submit" disabled={send} style={{background: "#49c1a388"}}>REGISTRAR</button>
+        <button className="button" id="button-register-two" type="submit" disabled={send} style={{background: "#49c1a388"}}>REGISTRAR</button>
       </form>
     </div>
   );
