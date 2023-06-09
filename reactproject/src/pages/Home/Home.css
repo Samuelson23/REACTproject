@@ -1,0 +1,12 @@
+.divHome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.divHome > button:hover {
+    cursor: pointer;
+    background-color:grey;
+}
