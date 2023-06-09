@@ -1,0 +1,38 @@
+.divFormulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputContainer > input {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.divInputGender {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.radio-container > input {
+    margin-top: 4px;
+}
+
+#button-register-two {
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#button-register-two:hover {
+    cursor: pointer;
+}
