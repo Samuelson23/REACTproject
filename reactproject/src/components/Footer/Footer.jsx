@@ -3,7 +3,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer>
       <div className="footer-content">
         <p className="footer-text">Hotel Castelldefels. All rights reserved ©.</p>
       </div>
