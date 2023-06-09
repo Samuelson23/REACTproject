@@ -6,11 +6,11 @@ import Uploadfile from "../../components/Uploadfile/Uploadfile";
 import { useAuth } from "../../context/AuthContext";
 import useUserError from "../../Hooks/useError/useUserError";
 import { useNavigate } from "react-router-dom";
-
-
 //1º) Crear el html de lo que será la estructura del register para darle un poco de forma
 //2º) Importar la libreria Hook-form para poder gestionar bien los formularios
-//3º)
+//3º) Nos traemos el useAuth (contexto global) para setearle los datos del usuario
+//4º) Creamos el formSubmit() que gestionará la informacion de los inputs
+//5º)
 
 const Register = () => {
   const { register, handleSubmit } = useForm(); //handleSubmit nos permite controlar el formulario mediante funciones, creo
@@ -26,6 +26,9 @@ const Register = () => {
     console.log(inputFile)
     let customData;
 
+    //Si el input a recibido un archivo, quiere decir que el usuario ha elegido subir una foto de perfil con lo cual actualizamos la data
+    //recogida del formulario (formData) y le hacemos un spread operator para añadirle el campo imagen con el valor del input, en caso contrario
+    //y que el usuario no haya subido ninguna imagen le enviamos la data recogida del formulario.
     if(inputFile.length!==0){
       customData = {...formData, imagen:inputFile[0]}
       setSend(true)
@@ -40,12 +43,12 @@ const Register = () => {
     setSend(true)
     setResp(await registerUser(formData))
     setSend(false) */
-
   }
 
-
-
+//Si la respuesta es un 200 quiere decir que se ha registrado correctamente asique navegamos a la pagina checkCode para verificarlo
  (resp.status==200) && navigate("/checkCode")
+
+
   //form onSubmit={handleSubmit(formSubmit)}  -> handleSubmit + formSubmit recopilan toda la info recogida en los inputs
   return (
     <div className="divFormulario">

@@ -3,6 +3,7 @@ import "./Dashboard.css"
 
 const Dashboard = () => {
   return (
+    <>
     <div className="dashboard-page">
       <h1>Panel de Control</h1>
       <div className="button-container">
@@ -20,6 +21,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
