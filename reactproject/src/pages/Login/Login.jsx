@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { loginUser } from '../../services/user.service'
@@ -8,12 +8,19 @@ const Login = () => {
   const {register, handleSubmit} = useForm()
   const {send, setSend} = useState()
   const {resp, setResp} = useState()
+  const {loginOK, setLoginOK} = useState()
 
   const formSubmit = async (formData) => {    
       setSend(true)
       setResp(await loginUser(formData))
       setSend(false)
   }
+
+  //Creamos un useEffect que maneje las respuestas del servicio del login. Creamos una funcion useLoginError para manejar el status de
+  //cada respuesta y segun el status que tenga redireccionaremos al usuario.
+  useEffect(()=>{
+
+  },[resp])
   return (
     <div className="divFormulario">
       <h2>LOGIN/REGISTER</h2>
