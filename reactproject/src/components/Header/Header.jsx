@@ -1,9 +1,9 @@
 import "./Header.css"
 import {NavLink} from "react-router-dom"
-
 import React from 'react'
 
 const Header = () => {
+
   return (
     <header>
 
@@ -55,53 +55,7 @@ const Header = () => {
 
   </nav>
 
-  <ul className="icons-ul">
-
-    <li>
-      <img className="burger-icon" 
-      src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686235932/menu_FILL0_wght400_GRAD0_opsz48_kxkmrp.png" 
-      alt="burguer-icon"></img>
-
-        <ul className="desplegable">
-
-          <li>
-
-          <NavLink to="/dashboard">
-            <p>Home</p>
-          </NavLink>
-
-          </li>
-
-          <li>
-
-          <NavLink to="/Events">
-            <p>Events</p>
-          </NavLink>
-            
-          </li>
-
-          <li>
-
-          <NavLink to="/Profile">
-            <p>Profile</p>
-          </NavLink>  
-            
-          </li>
-
-          <li>
-
-          <NavLink to="/Logout">
-            <p className="p-logout">Logout</p>
-          </NavLink>
-            
-          </li>
-
-        </ul>
-
-    </li>
-
-  </ul>
-
+  
   </header>
   )}
 
