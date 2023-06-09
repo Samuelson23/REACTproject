@@ -51,10 +51,10 @@ const Register = () => {
     console.log(registerOk)
     
   },[resp]);
-//Si la respuesta es un 200 quiere decir que se ha registrado correctamente asique navegamos a la pagina checkCode para verificarlo
- //(resp.status==200) && navigate("/checkCode")
 
+//Si la respuesta es un 200 quiere decir que se ha registrado correctamente asique navegamos a la pagina checkCode para verificarlo
 (registerOk) && navigate("/checkCode")
+
   //form onSubmit={handleSubmit(formSubmit)}  -> handleSubmit + formSubmit recopilan toda la info recogida en los inputs
   return (
     <div className="divFormulario">
