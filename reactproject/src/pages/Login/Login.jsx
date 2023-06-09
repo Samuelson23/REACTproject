@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { loginUser } from '../../services/user.service'
+import "./Login.css"
 
 const Login = () => {
   const navigate = useNavigate()
@@ -24,11 +25,13 @@ const Login = () => {
   return (
     <div className="divFormulario">
       <h2>LOGIN/REGISTER</h2>
-      <form onSubmit={handleSubmit(formSubmit)}> 
+      <form className='form-register' onSubmit={handleSubmit(formSubmit)}> 
         <div className="inputContainer">
-          <label htmlFor="custom-input">email:</label>
+          
+          
           <input
-            type="text"
+            type="email"
+            placeholder='Email'
             className="inputUser"
             name="email"
             id="email"
@@ -36,9 +39,9 @@ const Login = () => {
             {...register("email", { required: true })}
           />
 
-          <label htmlFor="custom-input">Password:</label>
           <input
-            type="text"
+            type="password"
+            placeholder='Password'
             className="inputUser"
             name="password"
             id="password"
@@ -46,9 +49,8 @@ const Login = () => {
             {...register("password", { required: true })}
           />
         </div>
-        
-        <button type="submit" disabled={send} style={{background: "#49c1a388"}}>LOGIN</button>
-        <button className="button" onClick={()=>navigate("/register")}>REGISTER</button>
+        <button  className='button' id='login-button' type="submit" disabled={send} style={{background: "#49c1a388"}}>LOGIN</button>
+        <button className="button" id='register-button' onClick={()=>navigate("/register")}>REGISTER</button>
       </form>
     </div>
   )

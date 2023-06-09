@@ -1,0 +1,50 @@
+.divFormulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputUser {
+  border: 1px solid #063854;
+  background-color: #FFFFFF;
+  padding: 8px;
+  color: #063854;
+  height: 30px; /* Menos altura */
+  width: 220px; /* Más ancho */
+  transition: all 0.3s ease; /* Transición suave */
+border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inputUser:hover {
+  background-color: #F0F0F0; /* Cambiamos el color de fondo al pasar el mouse por encima */
+  color: #063854;
+  border-color: #063854;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Aumentamos la intensidad de la sombra */
+}
+
+#login-button:hover {
+    cursor: pointer;
+}
+
+#register-button:hover {
+    cursor: pointer;
+    background-color: #CCCC;
+}
