@@ -6,6 +6,7 @@ import Uploadfile from "../../components/Uploadfile/Uploadfile";
 import { useAuth } from "../../context/AuthContext";
 import useUserError from "../../Hooks/useError/useUserError";
 import { useNavigate } from "react-router-dom";
+import "./Register.css";
 
 //1º) Crear el html de lo que será la estructura del register para darle un poco de forma
 //2º) Importar la libreria Hook-form para poder gestionar bien los formularios
