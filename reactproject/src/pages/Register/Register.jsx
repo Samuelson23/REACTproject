@@ -6,18 +6,21 @@ import Uploadfile from "../../components/Uploadfile/Uploadfile";
 import { useAuth } from "../../context/AuthContext";
 import useUserError from "../../Hooks/useError/useUserError";
 import { useNavigate } from "react-router-dom";
+
 //1º) Crear el html de lo que será la estructura del register para darle un poco de forma
 //2º) Importar la libreria Hook-form para poder gestionar bien los formularios
 //3º) Nos traemos el useAuth (contexto global) para setearle los datos del usuario
 //4º) Creamos el formSubmit() que gestionará la informacion de los inputs
-//5º)
+//5º) Creamos el Hook que manejará el status de las respuestas (useUserError) para así dar feedback al usuario, o bien del fallo o bien
+//    redirigiendolo a la siguiente pagina
 
 const Register = () => {
   const { register, handleSubmit } = useForm(); //handleSubmit nos permite controlar el formulario mediante funciones, creo
   const [resp, setResp] = useState({}) //Estado en el que seteamos la respuesta y hacemos la llamada al servicio con la informacion recogida en los inputs
   const [send, setSend] = useState() //Estado para deshabilitar el boton de registrar hacemos la llamada al servicio
   const {user, setUser} = useAuth()
-  const {registerOK, setRegisterOK} = useState(false)
+  const [registerOk, setRegisterOk] = useState(false)
+
   const navigate = useNavigate()
   //Creamos la funcion formSubmit que recopila la info de los inputs y le añade la imagen. Junto a handleSubmit nos permite recopilar toda la 
   //informacion que recogemos por los inputs (formData)
@@ -39,16 +42,19 @@ const Register = () => {
       setResp(await registerUser(formData))
       setSend(false)
     }
-   /*  console.log(formData)
-    setSend(true)
-    setResp(await registerUser(formData))
-    setSend(false) */
   }
 
+  //Creamos el useEffect que manejará el status de la respuesta por medio del Hook useUserError cada vez que se envie una respuesta
+  useEffect(() => {
+    console.log(resp)
+    useUserError(resp, setRegisterOk)
+    console.log(registerOk)
+    
+  },[resp]);
 //Si la respuesta es un 200 quiere decir que se ha registrado correctamente asique navegamos a la pagina checkCode para verificarlo
- (resp.status==200) && navigate("/checkCode")
+ //(resp.status==200) && navigate("/checkCode")
 
-
+(registerOk) && navigate("/checkCode")
   //form onSubmit={handleSubmit(formSubmit)}  -> handleSubmit + formSubmit recopilan toda la info recogida en los inputs
   return (
     <div className="divFormulario">
