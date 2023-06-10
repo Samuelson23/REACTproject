@@ -18,10 +18,10 @@ const Profile = () => {
       <div className="top-bar">
         <div className="logo">Hotel Castelldefels</div>
         <div className="navigation">
-          <button>Home</button>
-          <button>Events</button>
-          <button>Perfil</button>
-          <button>Logout</button>
+          <button className='button-nav'>Home</button>
+          <button className='button-nav'>Events</button>
+          <button className='button-nav'>Perfil</button>
+          <button className='button-nav'>Logout</button>
         </div>
       </div>
       <h2>Perfil</h2>
