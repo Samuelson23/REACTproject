@@ -17,11 +17,15 @@ const Profile = () => {
     <div className='profile-container'>
       <div className="top-bar">
         <p>Hotel Castefa</p>
-        <div className="navigation">
-          <button className='button-nav'>Home</button>
+        <div className="buttons-container">
+         <div>
+         <button className='button-nav'>Home</button>
           <button className='button-nav'>Events</button>
+         </div>
+          <div>
           <button className='button-nav'>Perfil</button>
           <button className='button-nav'>Logout</button>
+          </div>
         </div>
       </div>
       <h2>Perfil</h2>
@@ -36,7 +40,7 @@ const Profile = () => {
           </div>
           <div className="profile-field">
             <label>Correo:</label>
-            <input type="text" value={user.email} readOnly />
+            <input type="email" value={user.email} readOnly />
           </div>
           <div className="profile-field">
             <label>Género:</label>
