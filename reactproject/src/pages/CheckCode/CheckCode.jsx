@@ -1,21 +1,44 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./CheckCode.css"
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { checkCode } from '../../services/user.service'
 
 const CheckCode = () => {
-    const navigate = useNavigate()
-    const {register, handleSubmit} = useForm()
-    const [send, setSend] = useState(false)
-    const [resp, setResp] = useState()
-    const [codeOk, setCodeOk] = useState(false)
+  const userLocal = localStorage.getItem("user")
+  const navigate = useNavigate()
+  const {register, handleSubmit} = useForm()
+  const [send, setSend] = useState(false)
+  const [resp, setResp] = useState()
+  const [codeOk, setCodeOk] = useState(false)
 
-    const formSubmit = async (formData) => {    
-        setSend(true)
-        setResp(await checkCode(formData))
-        setSend(false)
+  const formSubmit = async (formData) => {
+    if(userLocal == null){
+      const customFormData = {
+        confirmationCode:parseInt(formData.confirmationCode),
+        email:allUser.data.user.email,
+      }
+      console.log(customFormData)
+      setSend(true)
+      setResp(await checkCode(customFormData))
+      setSend(false)
+    }else{
+      const parseUser = JSON.parse(userLocal)
+      const customFormData = {
+        confirmationCode:parseInt(formData.confirmationCode),
+        email:parseUser.user.email
+      }
+      console.log(parseUser.user.email)
+      console.log(parseInt(formData.confirmationCode))
+      setSend(true)
+      setResp(await checkCode(customFormData))
+      setSend(false)
     }
+  }
+
+  useEffect(()=>{
+    console.log(resp)
+  },[resp])
 
   return (
     <div className="divFormulario">

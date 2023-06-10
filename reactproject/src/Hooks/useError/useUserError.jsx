@@ -13,7 +13,7 @@ const useUserError = (res, setRegisterOk) => {
             text: 'Check your email and enter the confirmation code',
             background: '#063854',
             color: '#FFFFFF',
-            timer: 2000
+            timer: 3000
         })
         
     }
