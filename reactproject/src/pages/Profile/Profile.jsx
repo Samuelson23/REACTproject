@@ -14,9 +14,9 @@ const Profile = () => {
   };
 
   return (
-    <div>
+    <div className='profile-container'>
       <div className="top-bar">
-        <div className="logo">Hotel Castelldefels</div>
+        <p>Hotel Castefa</p>
         <div className="navigation">
           <button className='button-nav'>Home</button>
           <button className='button-nav'>Events</button>
