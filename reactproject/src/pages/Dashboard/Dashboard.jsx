@@ -8,16 +8,16 @@ const Dashboard = () => {
       <h1>Panel de Control</h1>
       <div className="button-container">
         <div className="button">
-          <img src="imagen1.png" alt="Imagen 1" />
-          <p>Descripción de la imagen 1</p>
+          <img src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686304076/proyectoREACT/636e8762616f6.r_d.670-381-7518_lghjtv.png" alt="Imagen 1" />
+          <p>Eventos </p>
         </div>
         <div className="button">
-          <img src="imagen2.png" alt="Imagen 2" />
-          <p>Descripción de la imagen 2</p>
+          <img src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686257608/proyectoREACT/109B_aqg56g.webp" alt="Imagen 2" />
+          <p>Perfil</p>
         </div>
         <div className="button">
-          <img src="imagen3.png" alt="Imagen 3" />
-          <p>Descripción de la imagen 3</p>
+          <img src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686304336/proyectoREACT/more-tuchi-muzhchina-sup_udibhb.jpg" alt="Imagen 3" />
+          <p>Login</p>
         </div>
       </div>
     </div>

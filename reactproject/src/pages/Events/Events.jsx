@@ -28,14 +28,24 @@ const Events = () => {
 
   return(
     <div className="divEvents">
-      <h1>EVENTOS</h1>
-     {
-      resp!=undefined ? (resp?.data?.map((elem)=>(<PrintEvent data={elem} key={elem._id}/>))) : <p>Cargando...</p>
+      <h1 className='titleEvent'>EVENTOS</h1>
+      <div className="divData">
+        <h2>
+        {
+      resp!=undefined ? (<PrintEvent data={resp} />) : <p>Cargando...</p>
 
-     }
+     }  
+        </h2>
      
+        </div>
+    
+   
+     
+      
+   
     </div>
   )
 }
 
 export default Events
+
