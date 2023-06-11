@@ -46,7 +46,7 @@ const CheckCode = () => {
  },[resp, codeOk])
 
  if(codeOk){
-  navigate("/dashboard")
+  navigate("/login")
  }
 
   return (
