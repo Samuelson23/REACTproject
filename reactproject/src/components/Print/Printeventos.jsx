@@ -1,4 +1,4 @@
-
+import "./Printeventos.css"
 
 export const PrintEvent = ({data}) => {
     console.log("datacomp",data)
@@ -6,11 +6,22 @@ export const PrintEvent = ({data}) => {
     console.log("name",name)
     return (
         <>
-        <div key={_id}>
+        {data.data.map((element)=>(
+        <div key={element._id} className="event-container">
+        <h2>{element.name}</h2>
+        <p>{element.description}</p>
+        <p>{element.hora}</p>
+        <p>{element.location}</p>
+<button>Apuntarse</button>
 
-            <h2>{name}</h2> 
-        
         </div>
+
+
+        ))
+        
+        
+        
+        }
         
         </>
     )
