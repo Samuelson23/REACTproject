@@ -3,6 +3,8 @@ import "./CheckCode.css"
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { checkCode } from '../../services/user.service'
+import useCodeError from '../../Hooks/useError/useCodeError'
+import { useAuth } from '../../context/AuthContext'
 
 const CheckCode = () => {
   const userLocal = localStorage.getItem("user")
@@ -11,12 +13,15 @@ const CheckCode = () => {
   const [send, setSend] = useState(false)
   const [resp, setResp] = useState()
   const [codeOk, setCodeOk] = useState(false)
+  const {allUser}=useAuth();
 
   const formSubmit = async (formData) => {
+    console.log("alluser",allUser)
+    console.log("email", allUser.user.email)
     if(userLocal == null){
       const customFormData = {
         confirmationCode:parseInt(formData.confirmationCode),
-        email:allUser.data.user.email,
+        email:allUser.user.email,
       }
       console.log(customFormData)
       setSend(true)
@@ -36,9 +41,13 @@ const CheckCode = () => {
     }
   }
 
-  useEffect(()=>{
-    console.log(resp)
-  },[resp])
+ useEffect(()=>{
+  useCodeError(resp,setCodeOk)
+ },[resp, codeOk])
+
+ if(codeOk){
+  navigate("/dashboard")
+ }
 
   return (
     <div className="divFormulario">

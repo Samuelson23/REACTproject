@@ -19,7 +19,7 @@ const Register = () => {
   const { register, handleSubmit } = useForm(); //handleSubmit nos permite controlar el formulario mediante funciones, creo
   const [resp, setResp] = useState({}) //Estado en el que seteamos la respuesta y hacemos la llamada al servicio con la informacion recogida en los inputs
   const [send, setSend] = useState() //Estado para deshabilitar el boton de registrar hacemos la llamada al servicio
-  const {bridgeData} = useAuth()
+  const {bridgeData} = useAuth() //useAuth() es el contexto global  
   const [registerOk, setRegisterOk] = useState(false)
 
   const navigate = useNavigate()
