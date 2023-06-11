@@ -14,14 +14,18 @@ const Profile = () => {
   };
 
   return (
-    <div>
+    <div className='profile-container'>
       <div className="top-bar">
-        <div className="logo">Hotel Castelldefels</div>
-        <div className="navigation">
-          <button>Home</button>
-          <button>Events</button>
-          <button>Perfil</button>
-          <button>Logout</button>
+        <p>Hotel Castefa</p>
+        <div className="buttons-container">
+         <div>
+         <button className='button-nav'>Home</button>
+          <button className='button-nav'>Events</button>
+         </div>
+          <div>
+          <button className='button-nav'>Perfil</button>
+          <button className='button-nav'>Logout</button>
+          </div>
         </div>
       </div>
       <h2>Perfil</h2>
@@ -36,7 +40,7 @@ const Profile = () => {
           </div>
           <div className="profile-field">
             <label>Correo:</label>
-            <input type="text" value={user.email} readOnly />
+            <input type="email" value={user.email} readOnly />
           </div>
           <div className="profile-field">
             <label>Género:</label>
