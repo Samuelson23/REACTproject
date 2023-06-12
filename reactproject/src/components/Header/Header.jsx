@@ -1,9 +1,10 @@
 import "./Header.css"
 import {NavLink} from "react-router-dom"
 import React from 'react'
+import { useAuth } from "../../context/AuthContext"
 
 const Header = () => {
-
+  const {logout, user} = useAuth()
   return (
     <header>
 
@@ -29,7 +30,7 @@ const Header = () => {
         />
     </NavLink>
 
-    <NavLink to="/Events">
+    {(user!=null)&&(<><NavLink to="/Events">
         <img
           className="nav-img"
           src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686180327/proyectoREACT/calendar-check_rgbc42.png"
@@ -44,14 +45,15 @@ const Header = () => {
           alt="Profile"
         />
     </NavLink>  
-
-    <NavLink to="/Logout">
-        <img
+    <img
           className="nav-img"
           src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686180517/proyectoREACT/logout_mxofcx.png"
           alt="Logout"
-        />
-    </NavLink>
+          onClick={()=>logout()}
+        /></>)}  
+    
+        
+    
 
   </nav>
 

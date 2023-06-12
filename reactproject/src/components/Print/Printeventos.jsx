@@ -3,9 +3,10 @@ import "./Printeventos.css"
 import { addToEvent } from "../../services/user.service"
 import { useAuth } from "../../context/AuthContext"
 import useUpdateUser from "../../Hooks/useUpdateUser"
+import { useNavigate } from "react-router-dom"
 
 export const PrintEvent = ({data}) => {
-    
+    const navigate = useNavigate()
     const {name, description, hora, location, _id} = data
     const {updateUser} = useUpdateUser()
 
@@ -41,7 +42,7 @@ export const PrintEvent = ({data}) => {
                 <div className="button-container-card">
                 
                 <button className="events-check-button" onClick={()=>handleAddtoEvent(element._id)}>{(!JSON.stringify(user.events).includes(element._id)) ? "Apuntarse": "Desapuntar"}</button>
-            {(JSON.stringify(user.events).includes(element._id)) ? <button>Crear Review</button> : null}
+                {(JSON.stringify(user.events).includes(element._id)) ? <button className="events-check-button" onClick={()=>navigate(`/events/${element._id}`)}>Crear Review</button> : null}
                 </div>
             </figure>
 
