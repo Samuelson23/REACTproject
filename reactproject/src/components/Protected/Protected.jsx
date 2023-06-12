@@ -5,10 +5,11 @@ import { useAuth } from "../../context/AuthContext";
 export const Protected = ({ children }) => {
   // tendremos que traernos el user del contexto
 
-  const { user,logout} = useAuth();
+  const { user} = useAuth();
 
   if (user == null || user?.check == false) {
-    logout()
+    localStorage.removeItem("user")
+    return <Navigate to="/login" />
   }
 
   return children;

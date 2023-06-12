@@ -66,6 +66,7 @@ export const AuthContextProvider = ({children}) => {
     navigate("/login")
    }
 
+
    const removeUser = () => {
     setUser(null)
     localStorage.removeItem("user")

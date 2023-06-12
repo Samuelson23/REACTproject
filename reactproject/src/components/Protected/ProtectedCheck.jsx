@@ -12,6 +12,8 @@ const ProtectedCheck = ({ children }) => {
   const { user, allUser } = useAuth();
 
   if (allUser?.data?.user?.check == true || user?.check == true) {
+    console.log(allUser)
+    console.log("user",user)
     return children;
   } else {
     return <Navigate to="/checkCode" />;

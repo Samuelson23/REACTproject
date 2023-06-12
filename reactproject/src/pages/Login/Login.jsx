@@ -12,7 +12,7 @@ const Login = () => {
   const [send, setSend] = useState(false)
   const [resp, setResp] = useState()
   const [loginOk, setLoginOk] = useState()
-  const {userLogin} = useAuth()
+  const {userLogin,setUser} = useAuth()
 
   const formSubmit = async (formData) => {    
       setSend(true)
@@ -26,6 +26,10 @@ const Login = () => {
     console.log(resp)
     useLoginError(resp,setLoginOk,userLogin)
   },[resp])
+
+  useEffect(()=>{
+    setUser(()=> null)
+  },[])
 
   if (loginOk) {
     if (resp.data.user.check == false) {

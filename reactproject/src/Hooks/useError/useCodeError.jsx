@@ -1,9 +1,27 @@
 import Swal from "sweetalert2";
 
-const useCodeError = (resp, setCodeOk) => {
+const useCodeError = (resp, setCodeOk, setUser) => {
     //STATUS 200 ----> checkCode:true -> comprobado correctamente y usuario actualizado con check:true
     if(resp?.status == 200){
+        if (localStorage.getItem("user")) {
+            const currentUser = localStorage.getItem("user");
+            const parseCurrentUser = JSON.parse(currentUser);
+            const customUser = {
+              ...parseCurrentUser,
+              check: true,
+            };
+            const customUserString = JSON.stringify(customUser);
+      
+            //! No utilzamos directamente el userLogin porque ya estamos logados solo tenemos...ç
+            //! que actualizar el localstorage y el user el contesto para que la nav se renderice correctamente
+      
+            //userlogin(customUserString);
+            setUser(() => customUser);
+            localStorage.setItem("user", customUserString);
+          }
+
         setCodeOk(()=>true)
+
         Swal.fire({
             icon:'success',
             title: 'Register successfully',

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import "./CheckCode.css"
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { checkCode } from '../../services/user.service'
 import useCodeError from '../../Hooks/useError/useCodeError'
 import { useAuth } from '../../context/AuthContext'
+import useAutoLogin from '../../Hooks/useAutoLogin'
 
 const CheckCode = () => {
   const userLocal = localStorage.getItem("user")
@@ -13,7 +14,8 @@ const CheckCode = () => {
   const [send, setSend] = useState(false)
   const [resp, setResp] = useState()
   const [codeOk, setCodeOk] = useState(false)
-  const {allUser}=useAuth();
+  const {setUser,allUser, userLogin}=useAuth();
+
 
   const formSubmit = async (formData) => {
     console.log("alluser",allUser)
@@ -31,9 +33,9 @@ const CheckCode = () => {
       const parseUser = JSON.parse(userLocal)
       const customFormData = {
         confirmationCode:parseInt(formData.confirmationCode),
-        email:parseUser.user.email
+        email:parseUser.email
       }
-      console.log(parseUser.user.email)
+      console.log(parseUser.email)
       console.log(parseInt(formData.confirmationCode))
       setSend(true)
       setResp(await checkCode(customFormData))
@@ -42,11 +44,20 @@ const CheckCode = () => {
   }
 
  useEffect(()=>{
-  useCodeError(resp,setCodeOk)
- },[resp, codeOk])
+  useCodeError(resp,setCodeOk,setUser)
+ },[resp])
+
+ useEffect(()=>{
+  console.log("me monto")
+  return ()=> console.log("me desmonto")
+ },[])
 
  if(codeOk){
-  navigate("/login")
+  if(!localStorage.getItem("user")){
+    useAutoLogin(allUser, userLogin)
+  }else{
+    return <Navigate to="/dashboard"/>
+  }
  }
 
   return (

@@ -26,6 +26,14 @@ export const loginUser = async (dataForm) => {
     });
 };
 
+//AUTOLOGIN
+export const autoLogin = async (dataForm) => {
+  return API.post("/user/login/autologin", dataForm)
+    .then((res) => res)
+    .catch((error) => {
+      return error;
+    });
+};
 // CHECK CODE ------------------
 export const checkCode = async (dataForm) => {
   return API.post("/user/checkCode", dataForm)
