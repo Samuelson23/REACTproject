@@ -48,7 +48,7 @@ const Header = () => {
           alt="Profile"
         />
       </NavLink> 
-      <NavLink>
+      <NavLink to={("/Login")}>
         <img
           className="nav-img"
           src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686580253/logout_FILL0_wght400_GRAD0_opsz48_pj71cf.png"

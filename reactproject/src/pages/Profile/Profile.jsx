@@ -1,7 +1,10 @@
 import React from 'react';
 import './profile.css';
+import ChangePassword from '../ChangePassword/ChangePassword';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
+  const navigate=useNavigate()
   const user = {
     name: 'Nombre del Usuario',
     email: 'usuario@example.com',
@@ -9,9 +12,6 @@ const Profile = () => {
     role: 'Rol del Usuario',
   };
 
-  const handleChangePassword = () => {
-    // Lógica para cambiar la contraseña del usuario
-  };
 
   return (
     <div className='profile-container'>
@@ -37,7 +37,7 @@ const Profile = () => {
 
       <div className="change-password">
         <p>¿Quieres cambiar la contraseña?</p>
-        <button onClick={handleChangePassword}>Cambiar Contraseña</button>
+        <button onClick={()=>navigate("/changePassword")}>Cambiar Contraseña</button>
       </div>
     </div>
     </div>

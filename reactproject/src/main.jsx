@@ -18,6 +18,7 @@ import ProtectedCheck from './components/Protected/ProtectedCheck.jsx'
 import ProtectedCheckChildren from './components/Protected/ProtectedCheckChildren.jsx'
 import { ProtectedGeneral } from './components/Protected/ProtectedGeneral.jsx'
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword.jsx'
+import ChangePassword from './pages/ChangePassword/ChangePassword.jsx'
 
 
 
@@ -53,6 +54,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
           <Route path="/resendCode" />
           <Route path="/forgotPassword" element={<ForgotPassword/>}/>
+          <Route path="/changePassword" element={<ChangePassword/>}/>
 
           <Route path="/dashboard" element ={
             <ProtectedGeneral>
