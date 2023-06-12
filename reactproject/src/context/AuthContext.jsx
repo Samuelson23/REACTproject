@@ -37,14 +37,14 @@ export const AuthContextProvider = ({children}) => {
    //y esos datos los seteamos en allUser para tenerlos en el contexto global. 
    //Con esta funcion puente nos evitamos problemas de asincronia con los estados de React
    const bridgeData = (state) => {
-    const data = localStorage.getItem("data")
+    const data = localStorage.getItem("user")
     console.log
     const parseData = JSON.parse(data)
 
     switch(state){
         case "dataUser":
             setAllUser(parseData)
-            localStorage.removeItem("data")
+            localStorage.removeItem("user")
             break;
         default: break;
     }
@@ -55,7 +55,7 @@ export const AuthContextProvider = ({children}) => {
    const userLogin=(data)=>{
     localStorage.setItem("user",data)
     const parseData = JSON.parse(data)
-    setUser(()=>parseData)
+    setUser(()=>[parseData])
    }
 
    //Creamos la funcion que gestiona el logout. Borramos el user de local storage y del estado user

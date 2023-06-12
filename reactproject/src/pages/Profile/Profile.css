@@ -54,4 +54,14 @@
 margin-bottom: 10px;
 margin-top: 5px;
 align-items: center;
+
+  margin-top: 15px;
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 30px;
+
 }

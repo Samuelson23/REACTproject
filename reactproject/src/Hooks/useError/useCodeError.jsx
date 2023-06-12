@@ -2,7 +2,8 @@ import Swal from "sweetalert2";
 
 const useCodeError = (resp, setCodeOk) => {
     //STATUS 200 ----> checkCode:true -> comprobado correctamente y usuario actualizado con check:true
-    if(resp.status == 200){
+    if(resp?.status == 200){
+        setCodeOk(()=>true)
         Swal.fire({
             icon:'success',
             title: 'Register successfully',
@@ -13,7 +14,7 @@ const useCodeError = (resp, setCodeOk) => {
         })
     } 
     //STATUS 200 ----> checkCode:false -> comprobado correctamente pero el usuario no se ha actualizado, checkCode:False
-    if(resp.stauts==200){
+    if(resp?.status==200 && resp?.data?.testCheckOk?.toString() == "true"){
         Swal.fire({
             icon:'error',
             title: 'Something went wrong',
@@ -23,9 +24,10 @@ const useCodeError = (resp, setCodeOk) => {
             timer: 3500  
         })
     }
-    //STATUS 404 ----> el usuario introducido no es correcto
-    if(resp.response.status == 404 && resp.response.includes("no es valido")){
-        Swal.fira({
+    
+    //STATUS 404 ----> el codigo introducido no es correcto
+    if(resp?.response?.status == 404 && resp?.response?.data.includes("no es valido")){
+        Swal.fire({
             icon:'error',
             title: 'Invalid code',
             text: 'You put a wrong code',
@@ -35,8 +37,10 @@ const useCodeError = (resp, setCodeOk) => {
         })
     }
     //STATUS 404 ----> el codigo introducido no es correcto
-
+    
     //STATUS 500 ----> error interno
 
 
 }
+
+export default useCodeError

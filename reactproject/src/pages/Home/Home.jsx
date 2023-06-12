@@ -8,12 +8,13 @@ import "./Home.css";
 const Home = () => {
     const {user} = useAuth()
     const navigate = useNavigate()
+    console.log("user:",user)
   return (
     <div className="divHome">
         {(user !== null) 
         ? (
             <>
-            <h1>Hola</h1>
+            <h1>Hola {user.name}</h1>
             <button className="button" onClick={()=> navigate("dashboard")}>Acceder</button>
             </>
         )

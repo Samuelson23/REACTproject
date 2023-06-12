@@ -1,27 +1,41 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { loginUser } from '../../services/user.service'
 import "./Login.css"
+import { useAuth } from '../../context/AuthContext'
+import useLoginError from '../../Hooks/useError/useLoginError'
 
 const Login = () => {
   const navigate = useNavigate()
   const {register, handleSubmit} = useForm()
-  const {send, setSend} = useState()
-  const {resp, setResp} = useState()
-  const {loginOK, setLoginOK} = useState()
+  const [send, setSend] = useState(false)
+  const [resp, setResp] = useState()
+  const [loginOk, setLoginOk] = useState()
+  const {userLogin} = useAuth()
 
   const formSubmit = async (formData) => {    
       setSend(true)
-      setResp(await loginUser(formData))
+      setResp(await loginUser(formData, setLoginOk, userLogin))
       setSend(false)
   }
 
   //Creamos un useEffect que maneje las respuestas del servicio del login. Creamos una funcion useLoginError para manejar el status de
   //cada respuesta y segun el status que tenga redireccionaremos al usuario.
   useEffect(()=>{
-
+    console.log(resp)
+    useLoginError(resp,setLoginOk,userLogin)
   },[resp])
+
+  if (loginOk) {
+    if (resp.data.user.check == false) {
+      return <Navigate to="/verifyCode" />;
+    } else {
+      return <Navigate to="/dashboard" />;
+    }
+  }
+  
+
   return (
     <div className="divFormulario">
       <h2>LOGIN/REGISTER</h2>

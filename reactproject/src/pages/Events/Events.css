@@ -1,31 +1,19 @@
-.event-page {
-  text-align: center;
-background-color: #E2E7D3;
-color:#063954;
-  
-}
-
-.event-list {
+.events-container {
+  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  justify-content: center;
 }
 
-.event {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color:#063954;
-  color:#E2E7D3;
+.titleEvent {
+  font-size: 40px;
 }
 
-.event h2 {
-  margin-bottom: 10px;
-}
+.events-support {
+  max-width: 700px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
 
-.event p {
-  color: #E2E7D3;
-  
 }
