@@ -12,6 +12,7 @@ const ForgotPassword = () => {
     const [forgetOk, setForgetOk] = useState(false);
 
   const formSubmit = async (formData) => {
+    console.log(formData)
     setSend(true);
     setResp(await forgotPassword(formData));
     setSend(false);

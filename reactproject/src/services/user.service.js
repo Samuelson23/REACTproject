@@ -54,7 +54,7 @@ export const resendCode = async (dataForm) => {
 
 // FORGOT PASSWORD -------------
 export const forgotPassword = async (dataForm) => {
-  return API.get("/user/forgotPassword", dataForm)
+  return API.patch("/user/forgotPassword", dataForm)
     .then((res) => res)
     .catch((error) => {
       return error;
