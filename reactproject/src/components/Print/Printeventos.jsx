@@ -2,7 +2,7 @@ import "./Printeventos.css"
 
 export const PrintEvent = ({data}) => {
     console.log("datacomp",data)
-    const {name, description, hora, location,_id} = data
+    const {name, description, hora, location, _id} = data
     console.log("name",name)
 
     const handleAddtoEvent = () => {
@@ -24,9 +24,6 @@ export const PrintEvent = ({data}) => {
 
 
         ))
-        
-        
-        
         }
         
         </>
