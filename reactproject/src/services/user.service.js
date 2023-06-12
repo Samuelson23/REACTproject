@@ -81,7 +81,7 @@ export const deleteUser = async (dataForm) => {
 
 // UPDATE USER -----------------
 export const updateUser = async (dataForm) => {
-  return API.patch("/user/updateUser/:id", dataForm)
+  return API.patch("/user/updateUser", dataForm)
     .then((res) => res)
     .catch((error) => {
       return error;
