@@ -30,21 +30,24 @@ export const PrintEvent = ({data}) => {
     },[resp])
     
     return (
-        <>
-        {data?.data?.map((element)=>(
-        <div key={element._id}>
-        <h2>{element.name}</h2>
-        <p>{element.description}</p>
-        <p>{element.hora}</p>
-        <p>{element.location}</p>
-        <button onClick={()=>handleAddtoEvent(element._id)}>{(!JSON.stringify(user.events).includes(element._id)) ? "Apuntar": "Desapuntar"}</button>
+
+
+        <div className="card-container">
+         {data?.data?.map((element)=>(
+            <figure key={element._id} className="event-container">
+                <h2 className="event-title-card">{element.name}</h2>
+                <p>- {element.description}</p>
+                <p>- Location: {element.location}</p>
+                <div className="button-container-card">
+                
+                <button className="events-check-button" onClick={()=>handleAddtoEvent(element._id)}>{(!JSON.stringify(user.events).includes(element._id)) ? "Apuntarse": "Desapuntar"}</button>
             {(JSON.stringify(user.events).includes(element._id)) ? <button>Crear Review</button> : null}
-        </div>
+                </div>
+            </figure>
 
-
-        ))
-        }
+            ))
+         }
         
-        </>
+        </div>
     )
 }
