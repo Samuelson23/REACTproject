@@ -22,52 +22,53 @@ const Header = () => {
 
       <nav className="NavIcons">
 
+    {(user!=null)&&(
     <NavLink to="/dashboard">
         <img
           className="nav-img"
           src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686579904/home_FILL0_wght400_GRAD0_opsz48_chtuhu.png"
           alt="Home"
         />
-    </NavLink>
-
-    {(user!=null)&&(<><NavLink to="/Events">
+    </NavLink>)}
+    
+    {(user!=null)&&(
+      <>
+      <NavLink to="/Events">
         <img
           className="nav-img"
           src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686580250/calendar_month_FILL0_wght400_GRAD0_opsz48_cvajid.png"
           alt="Events"
         />
-    </NavLink>
+      </NavLink>
 
-    <NavLink to="/Profile">
+      <NavLink to="/Profile">
         <img
           className="nav-img"
           src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686579992/person_FILL0_wght400_GRAD0_opsz48_1_bclknm.png"
           alt="Profile"
         />
-    </NavLink>  
-   
-    <NavLink to="/Login">
+      </NavLink> 
+      <NavLink>
         <img
-          className="nav-img"
-          src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686580300/login_FILL0_wght400_GRAD0_opsz48_1_pnrydx.png"
-          alt="Login"
-        />
-    </NavLink>  
-    <NavLink>
-    <img
           className="nav-img"
           src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686580253/logout_FILL0_wght400_GRAD0_opsz48_pj71cf.png"
           alt="Logout"
           onClick={()=>logout()} 
         />
-        </NavLink></>)}  
-    
-        
-    
+      </NavLink>
+    </>
+    )}
 
+    {(user==null)&&(
+      <NavLink to="/Login">
+      <img
+        className="nav-img"
+        src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686580300/login_FILL0_wght400_GRAD0_opsz48_1_pnrydx.png"
+        alt="Login"
+      />
+    </NavLink>)}
+   
   </nav>
-
-  
   </header>
   )}
 
