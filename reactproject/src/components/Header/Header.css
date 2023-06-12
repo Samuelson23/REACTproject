@@ -47,9 +47,10 @@ header {
 
 @media screen and (max-width: 813px) {
   header {
+    height: 20vh;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     margin-bottom: 5px;
   }
   .logo{
@@ -59,7 +60,7 @@ header {
     width: 40px;
   }
   .hotel-title {
-    font-size: 25px;
+    font-size: 32px;
   }
 }
 
