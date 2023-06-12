@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { createReview } from '../../services/review.service'
+import "./CardReview.css";
 
 const CardReview = ({event}) => {
     const {user} = useAuth()
@@ -29,8 +30,8 @@ const CardReview = ({event}) => {
         console.log(resp)
     },[resp])
   return (
-    <figure key={event._id} className="event-container">
-                <h2 className="event-title-card">{event.name}</h2>
+    <figure key={event._id} className="review-container">
+                <h2 className="review-title">{event.name}</h2>
                 <p>- {event.description}</p>
                 <p>- Location: {event.location}</p>
                 <div className="button-container-card">
@@ -38,11 +39,10 @@ const CardReview = ({event}) => {
                     <textarea name="" id="" cols="30" rows="10" ref={refText}></textarea>
                 </label>
                 <label>Puntuacion
-                    <input type="number" name="" id="" ref={refPuntuacion} />
+                    <input type="number" className='input-review' ref={refPuntuacion} />
                 </label>
-                
-                
-                <button className="events-check-button" onClick={()=>handleReview()}></button>
+            
+                <button className="review-nutton" onClick={()=>handleReview()}></button>
                
                 </div>
             </figure>

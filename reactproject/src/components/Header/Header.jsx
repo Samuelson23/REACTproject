@@ -25,7 +25,7 @@ const Header = () => {
     <NavLink to="/dashboard">
         <img
           className="nav-img"
-          src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686577217/proyectoREACT/casa_fb3gqj.png"
+          src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686579904/home_FILL0_wght400_GRAD0_opsz48_chtuhu.png"
           alt="Home"
         />
     </NavLink>
@@ -33,7 +33,7 @@ const Header = () => {
     {(user!=null)&&(<><NavLink to="/Events">
         <img
           className="nav-img"
-          src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686577366/proyectoREACT/calendario_a1hlr5.png"
+          src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686580250/calendar_month_FILL0_wght400_GRAD0_opsz48_cvajid.png"
           alt="Events"
         />
     </NavLink>
@@ -41,7 +41,7 @@ const Header = () => {
     <NavLink to="/Profile">
         <img
           className="nav-img"
-          src=" https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686576949/proyectoREACT/acceso_qzzxfi.png"
+          src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686579992/person_FILL0_wght400_GRAD0_opsz48_1_bclknm.png"
           alt="Profile"
         />
     </NavLink>  
@@ -49,16 +49,18 @@ const Header = () => {
     <NavLink to="/Login">
         <img
           className="nav-img"
-          src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686577846/proyectoREACT/contrasena_dxrkl3.png"
-          alt="Profile"
+          src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686580300/login_FILL0_wght400_GRAD0_opsz48_1_pnrydx.png"
+          alt="Login"
         />
     </NavLink>  
+    <NavLink>
     <img
           className="nav-img"
-          src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686577959/proyectoREACT/cerrar-sesion_xjj3sd.png"
+          src="https://res.cloudinary.com/dul2s17m2/image/upload/v1686580253/logout_FILL0_wght400_GRAD0_opsz48_pj71cf.png"
           alt="Logout"
-          onClick={()=>logout()}
-        /></>)}  
+          onClick={()=>logout()} 
+        />
+        </NavLink></>)}  
     
         
     
