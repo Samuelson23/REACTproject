@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useAuth } from '../../context/AuthContext'
 import { Navigate } from 'react-router-dom'
 import { forgotPassword } from '../../services/user.service'
+import "./ForgotPassword.css";
 
 const ForgotPassword = () => {
 
