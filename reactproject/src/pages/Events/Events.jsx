@@ -27,20 +27,14 @@ const Events = () => {
 
   return(
     <div className="events-container">
-      <h2 className='titleEvent'>EVENTOS</h2>
-      <div className="divData">
-        <div className='events-title'>
-        {
-      resp!=undefined ? (<PrintEvent data={resp} />) : <p>Cargando...</p>
 
-     }  
+      <h2 className='titleEvent'>EVENTOS</h2>
+
+        <div className='events-support'>
+          {
+            resp!=undefined ? (<PrintEvent data={resp} />) : <p>Cargando...</p>
+          }  
         </div>
-     
-        </div>
-    
-   
-     
-      
    
     </div>
   )
