@@ -1,11 +1,6 @@
-.card-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding:10px;
-}
 
-.event-container {
+
+/* .events-container {
   padding: 20px;
   display: flex;
   align-items:flex-start;
@@ -14,7 +9,7 @@
   gap: 10px;
   background-color: #063854;
   color: #E2E7D3;
-}
+} */
 
 .event-container > h2 {
   text-decoration: underline;
@@ -37,5 +32,5 @@
 
 .events-check-button:hover {
   cursor: pointer;
-  background-color:darkolivegreen;
+  background-color: gainsboro;
 }
