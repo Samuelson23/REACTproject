@@ -21,6 +21,13 @@
   align-items: center;
   justify-content: center;
   margin: 5vw; 
+  height: 35px;
+  border-radius: 5px;
+}
+.button:hover{
+  -webkit-box-shadow: 0px 2px 5px 6px rgba(74,74,74,1);
+  -moz-box-shadow: 0px 2px 5px 6px rgba(74,74,74,1);
+  box-shadow: 0px 2px 5px 6px rgba(74,74,74,1);
 }
 
 .button img {
