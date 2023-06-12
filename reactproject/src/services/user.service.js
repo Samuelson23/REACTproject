@@ -24,6 +24,7 @@ export const loginUser = async (dataForm) => {
       return error;
     });
 };
+
 // CHECK CODE ------------------
 export const checkCode = async (dataForm) => {
   return API.post("/user/checkCode", dataForm)
@@ -32,7 +33,8 @@ export const checkCode = async (dataForm) => {
       return error;
     });
 };
-// SEND CODE -------------------
+
+// RESEND CODE -------------------
 export const resendCode = async (dataForm) => {
   return API.post("/user/resendCode", dataForm)
     .then((res) => res)
@@ -40,6 +42,7 @@ export const resendCode = async (dataForm) => {
       return error;
     });
 };
+
 // FORGOT PASSWORD -------------
 export const forgotPassword = async (dataForm) => {
   return API.get("/user/forgotPassword", dataForm)
@@ -48,6 +51,7 @@ export const forgotPassword = async (dataForm) => {
       return error;
     });
 };
+
 // CHANGE PASSWORD -------------
 export const changePassword = async (dataForm) => {
   return API.post("/user/changePassword", dataForm)
@@ -56,6 +60,7 @@ export const changePassword = async (dataForm) => {
       return error;
     });
 };
+
 // DELETE USER -----------------
 export const deleteUser = async (dataForm) => {
   return API.delete("user/delete", dataForm)
@@ -64,6 +69,7 @@ export const deleteUser = async (dataForm) => {
       return error;
     });
 };
+
 // UPDATE USER -----------------
 export const updateUser = async (dataForm) => {
   return API.patch("/user/updateUser/:id", dataForm)
@@ -72,9 +78,34 @@ export const updateUser = async (dataForm) => {
       return error;
     });
 };
+
 // ADD TO EVENT ---------------
 export const addToEvent = async (dataForm) => {
   return API.post("/user/addtoEvent", dataForm)
+    .then((res) => res)
+    .catch((error) => {
+      return error;
+    });
+};
+
+export const getByNameUser = async (name) => {
+  return API.get(`/user/${name}`)
+    .then((res) => res)
+    .catch((error) => {
+      return error;
+    });
+};
+
+export const getByIdUser = async (id) => {
+  return API.get(`/user/${id}`)
+    .then((res) => res)
+    .catch((error) => {
+      return error;
+    });
+};
+
+export const getAllEvents = async () => {
+  return API.get("/user")
     .then((res) => res)
     .catch((error) => {
       return error;
