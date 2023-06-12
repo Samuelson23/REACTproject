@@ -13,19 +13,19 @@ export const PrintEvent = ({data}) => {
     return (
 
         <div className="card-container">
-        {data?.data?.map((element)=>(
-        <figure key={element._id} className="event-container">
+         {data?.data?.map((element)=>(
+            <figure key={element._id} className="event-container">
+                <h2 className="event-title-card">{element.name}</h2>
+                <p>- {element.description}</p>
+                <p>- Location: {element.location}</p>
 
-        <h2>{element.name}</h2>
-        <p>{element.description}</p>
-        <p>{element.hora}</p>
-        <p>{element.location}</p>
+                <div className="button-container-card">
+                <button className="events-check-button">Apuntarse</button>
+                </div>
+            </figure>
 
-        <button className="events-check-button">Apuntarse</button>
-        </figure>
-
-        ))
-        }
+            ))
+         }
         
         </div>
     )

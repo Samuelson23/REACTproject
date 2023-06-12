@@ -1,7 +1,33 @@
 .card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.event-container {
   padding: 20px;
   display: flex;
-  align-items: center;
+  align-items:flex-start;
   justify-content: center;
   flex-direction: column;
+  gap: 10px;
+  background-color: #063854;
+  color: #E2E7D3;
+}
+
+.button-container-card {
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.events-check-button {
+  width: 100px;
+  height: 30px;
+  background-color: #CCCC;
+  border: none;
+}
+
+.events-check-button:hover {
+  cursor: pointer;
+  background-color:darkolivegreen;
 }
