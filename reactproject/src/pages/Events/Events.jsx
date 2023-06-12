@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import "./Events.css"
-
 import { getAllEvents } from '../../services/event.service'
 import { PrintEvent } from '../../components/Print/Printeventos'
 
@@ -28,14 +27,14 @@ const Events = () => {
 
   return(
     <div className="events-container">
-      <h1 className='titleEvent'>EVENTOS</h1>
+      <h2 className='titleEvent'>EVENTOS</h2>
       <div className="divData">
-        <h2 className='events-title'>
+        <div className='events-title'>
         {
       resp!=undefined ? (<PrintEvent data={resp} />) : <p>Cargando...</p>
 
      }  
-        </h2>
+        </div>
      
         </div>
     
