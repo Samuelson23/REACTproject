@@ -1,7 +1,10 @@
 import React from 'react'
 import "./Dashboard.css"
+import { useAuth } from '../../context/AuthContext';
 
 const Dashboard = () => {
+  const {user} = useAuth()
+  console.log(user)
   return (
     <>
     <div className="dashboard-page">

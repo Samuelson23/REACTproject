@@ -4,6 +4,7 @@ import { addToEvent } from "../../services/user.service"
 import { useAuth } from "../../context/AuthContext"
 import useUpdateUser from "../../Hooks/useUpdateUser"
 import { useNavigate } from "react-router-dom"
+import useAddEventError from "../../Hooks/useError/useAddEventError"
 
 export const PrintEvent = ({data}) => {
     const navigate = useNavigate()
@@ -27,9 +28,9 @@ export const PrintEvent = ({data}) => {
     }
 
     useEffect(()=>{
-        console.log(resp)
+        useAddEventError(resp)
     },[resp])
-    
+
     return (
 
 

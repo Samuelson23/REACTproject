@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { createReview } from '../../services/review.service'
 import "./CardReview.css";
+import useCreateReviewError from '../../Hooks/useError/useCreateReviewError';
 
 const CardReview = ({event}) => {
     const {user} = useAuth()
@@ -28,6 +29,7 @@ const CardReview = ({event}) => {
 
     useEffect(()=>{
         console.log(resp)
+        useCreateReviewError(resp)
     },[resp])
   return (
     <figure key={event._id} className="review-container">

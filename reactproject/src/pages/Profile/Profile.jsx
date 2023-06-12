@@ -4,12 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../../context/AuthContext';
 import { updateUser } from '../../services/user.service';
+import useUpdateError from '../../Hooks/useError/useUpdateError';
 
 const Profile = () => {
   const navigate=useNavigate()
   const {register, handleSubmit} = useForm()
   const [send, setSend] = useState(false)
   const [resp, setResp] = useState()
+  const [updateOk, setUpdateOk] = useState()
   const {user} = useAuth()
   
   const customData = {
@@ -22,14 +24,14 @@ const Profile = () => {
 
   const formSubmit = async (formData) => {
     console.log(formData)
-    console.log(user)
+    console.log("user",user)
     setSend(true)
     setResp(await updateUser(formData))
     setSend(false)
   }
 
   useEffect(()=>{
-    console.log(resp)
+    useUpdateError(resp, setUpdateOk)
   },[resp])
  
 

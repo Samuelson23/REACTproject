@@ -3,8 +3,10 @@ import { getByIdUser } from '../services/user.service'
 import { useAuth } from '../context/AuthContext'
 
 const useUpdateUser = () => {
-    const {user, setUser} = useAuth()
+    const { user, setUser} = useAuth()
+ 
     const updateUser = async(id) => {
+        console.log(id)
         const data = await getByIdUser(id)
         console.log(data)
         const dataEvents = data?.data?.events

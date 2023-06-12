@@ -4,6 +4,7 @@ import { useAuth } from '../../context/AuthContext'
 import Swal from 'sweetalert2'
 import { changePassword } from '../../services/user.service'
 import { useNavigate } from 'react-router-dom'
+import usePasswordError from '../../Hooks/useError/usePasswordError'
 
 const ChangePassword = () => {
     const {register,handleSubmit} = useForm()
@@ -46,6 +47,10 @@ const ChangePassword = () => {
         }
       };
 
+  
+/* useEffect(()=>{
+  usePasswordError(resp, setChangeOk)
+},[resp]) */
 
 
 (resp?.status==200) && navigate("/Profile")
