@@ -13,6 +13,10 @@ import { AuthContextProvider } from './context/AuthContext.jsx'
 import CheckCode from './pages/CheckCode/CheckCode.jsx'
 import AllEvents from './components/AllEvents/AllEvents.jsx'
 import EventById from './components/EventById/EventById.jsx'
+import { Protected } from './components/Protected/Protected.jsx'
+import ProtectedCheck from './components/Protected/ProtectedCheck.jsx'
+import ProtectedCheckChildren from './components/Protected/ProtectedCheckChildren.jsx'
+import { ProtectedGeneral } from './components/Protected/ProtectedGeneral.jsx'
 
 
 
@@ -27,7 +31,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
         <Route path='/' element={<App />}>
           <Route index element={<Home/>} />
-          <Route path="/profile" element={<Profile />} />
+
+          <Route path="/profile" element={<Protected><Profile/></Protected>} />
+
           <Route path="/events" element={<Events />}>
             <Route index element={<AllEvents/>}/>
             <Route path="/events/:id" element={<EventById/>}/>
@@ -37,10 +43,23 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/login" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register/>}/>
-          <Route path="/checkCode" element={<CheckCode/>} />
+
+          <Route path="/checkCode" element={
+            <ProtectedCheckChildren>
+              <CheckCode/>
+            </ProtectedCheckChildren>
+          } />
+
           <Route path="/resendCode" />
           <Route path="/forgotPassword"/>
-          <Route path="/dashboard" element ={<Dashboard/>}/>
+
+          <Route path="/dashboard" element ={
+            <ProtectedGeneral>
+              <ProtectedCheck>
+                <Dashboard/>
+              </ProtectedCheck>
+            </ProtectedGeneral>
+          }/>
         </Route>
 
       </Routes>

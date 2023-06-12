@@ -66,8 +66,13 @@ export const AuthContextProvider = ({children}) => {
     navigate("/login")
    }
 
+   const removeUser = () => {
+    setUser(null)
+    localStorage.removeItem("user")
+   }
+
    const value = useMemo(()=>({
-    user,setUser,userLogin,logout,allUser,setAllUser, bridgeData
+    user,setUser,userLogin,logout,allUser,setAllUser, bridgeData, removeUser
    }),[user,allUser])
 
    //Despues de todas las funcionalidades que puede albergar el provider (login,logout,almacenar user...etc)
