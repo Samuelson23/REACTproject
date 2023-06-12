@@ -15,6 +15,11 @@
   color: #E2E7D3;
 }
 
+.event-container > h2 {
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+
 .button-container-card {
   margin: 0 auto;
   margin-top: 10px;
