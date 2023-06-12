@@ -27,10 +27,10 @@ const Events = () => {
 
 
   return(
-    <div className="divEvents">
+    <div className="events-container">
       <h1 className='titleEvent'>EVENTOS</h1>
       <div className="divData">
-        <h2>
+        <h2 className='events-title'>
         {
       resp!=undefined ? (<PrintEvent data={resp} />) : <p>Cargando...</p>
 

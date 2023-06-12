@@ -1,44 +1,7 @@
-.event-page {
-  text-align: center;
-background-color: #E2E7D3;
-color:#063954;
-  
-}
-
-
-
-
-
-.divEvents{
-
-    display:flex;
-    flex-direction: column;
-    font-size: 12px;
-    padding: 5px 0;
-    margin:auto;
-    color: #f4e0e0;
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    justify-content: space-between;
-    transform: translate(-50%, -50%);
-    color: #c6d1d4;
-    text-shadow: 0 0 20px rgb(230, 10, 10),  0 0 20px rgba(10, 175, 230, 0);
-}
-
-.divData{
-display:flex;
-flex-direction: column;
-justify-content: space-between;
-}
-
-.titleEvent{
-
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #E2E7D3;
-  background-color: #063954;
-  font-size: 30px;
-  margin-top: 13px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+.events-container {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

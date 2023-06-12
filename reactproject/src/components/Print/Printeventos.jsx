@@ -5,14 +5,14 @@ export const PrintEvent = ({data}) => {
     const {name, description, hora, location, _id} = data
     console.log("name",name)
     return (
-        <div>
-        {data.data.map((element)=>(
+        <div className="card-container">
+        {data?.data?.map((element)=>(
         <figure key={element._id} className="event-container">
         <h2>{element.name}</h2>
         <p>{element.description}</p>
         <p>{element.hora}</p>
         <p>{element.location}</p>
-        <button>Apuntarse</button>
+        <button className="events-check-button">Apuntarse</button>
         </figure>
         ))
         }
