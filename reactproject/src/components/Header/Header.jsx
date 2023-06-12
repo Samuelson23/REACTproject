@@ -45,6 +45,14 @@ const Header = () => {
           alt="Profile"
         />
     </NavLink>  
+
+    <NavLink to="/Login">
+        <img
+          className="nav-img"
+          src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686576309/proyectoREACT/icons8-contrato-de-trabajo-32_nsblcz.png"
+          alt="Profile"
+        />
+    </NavLink>  
     <img
           className="nav-img"
           src="https://res.cloudinary.com/dw9b8eqmc/image/upload/v1686180517/proyectoREACT/logout_mxofcx.png"
