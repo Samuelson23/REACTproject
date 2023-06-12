@@ -5,3 +5,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.titleEvent {
+  font-size: 40px;
+}
+
+.events-support {
+  width: 700px;
+  border: 1px solid black;
+  margin-top: 30px;
+}
