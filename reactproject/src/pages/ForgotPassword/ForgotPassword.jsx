@@ -57,7 +57,7 @@ const ForgotPassword = () => {
           </div>
 
           <p className="bottom-text">
-            <small>Enter your email to send you the new password </small>
+            <small><strong>Enter your email to send you the new password</strong></small>
           </p>
         </form>
       </div>
