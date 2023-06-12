@@ -8,39 +8,45 @@ import "./ForgotPassword.css";
 const ForgotPassword = () => {
 
     const { register, handleSubmit } = useForm();
-    const [res, setRes] = useState({});
+    const [resp, setResp] = useState({});
     const [send, setSend] = useState(false);
     const [forgetOk, setForgetOk] = useState(false);
 
   const formSubmit = async (formData) => {
     setSend(true);
-    setRes(await forgotPassword(formData));
+    setResp(await forgotPassword(formData));
     setSend(false);
   };
 
+  useEffect(()=>{
+    console.log(resp)
+  },[resp])
+
   return (
     <>
-      <div className="form-wrap">
+      <div className="divFormulario">
         <h1>Change your password </h1>
 
-        <form onSubmit={handleSubmit(formSubmit)}>
-          <div className="user_container form-group">
-            <input
-              className="input_user"
-              type="text"
-              id="email"
-              name="email"
-              autoComplete="false"
-              {...register("email", { required: true })}
-            />
-            <label htmlFor="custom-input" className="custom-placeholder">
+        <form className='form-register' onSubmit={handleSubmit(formSubmit)}>
+          <div className="inputContainer">
+            
+            <label>
               Email
+              <input
+                type="email"
+                placeholder='Email'
+                className="inputUser"
+                name="email"
+                id="email"
+                autoComplete="false"
+                {...register("email", { required: true })}
+            />
             </label>
           </div>
 
           <div className="btn_container">
             <button
-              className="btn"
+              className='button'
               type="submit"
               disabled={send}
               style={{ background: send ? "#49c1a388" : "#49c1a2" }}
@@ -54,7 +60,7 @@ const ForgotPassword = () => {
           </p>
         </form>
       </div>
-    </>
+  </>
   )
 }
 
