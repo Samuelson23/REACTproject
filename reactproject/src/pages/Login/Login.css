@@ -48,3 +48,14 @@ border-radius: 10px;
     cursor: pointer;
     background-color: #CCCC;
 }
+
+.anchorPassword{
+  text-decoration: none;
+  color:#063854;
+  width: 80%;
+  height: 25px;
+  text-align: center;
+}
+.anchorPassword:hover{
+  border-bottom:1px solid #063854;
+}

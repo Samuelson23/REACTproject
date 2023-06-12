@@ -69,6 +69,7 @@ const Login = () => {
         </div>
         <button  className='button' id='login-button' type="submit" disabled={send} style={{background: "#49c1a388"}}>LOGIN</button>
         <button className="button" id='register-button' onClick={()=>navigate("/register")}>REGISTER</button>
+        <a href="/forgotPassword" className="anchorPassword">Forgot your Password?</a>
       </form>
     </div>
   )

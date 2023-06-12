@@ -126,6 +126,7 @@ const Register = () => {
         </div>
         
         <button className="button" id="button-register-two" type="submit" disabled={send} style={{background: "#49c1a388"}}>REGISTRAR</button>
+
       </form>
     </div>
   );
