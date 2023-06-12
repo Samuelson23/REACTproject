@@ -1,4 +1,48 @@
 .review-container {
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #063854;
+    max-width: 600px;
+    min-height: 200px;
     padding: 20px;
+    margin: 20px;
+    color: #E2E7D3;
+}
+
+.text-area {
+    resize: none;
+    height: 50px;
+    width: 300px;
+}
+
+.button-container-card, .review-textarea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 180px;
+}
+
+.input-review {
+    height: 20px;
+    width: 60px;
+}
+
+.review-button {
+    width: 100px;
+}
+
+review-button:hover {
+    cursor: auto;
+    background-color: #CCC;
 }

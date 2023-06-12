@@ -35,14 +35,17 @@ const CardReview = ({event}) => {
                 <p>- {event.description}</p>
                 <p>- Location: {event.location}</p>
                 <div className="button-container-card">
-                <label>Review:
-                    <textarea name="" id="" cols="30" rows="10" ref={refText}></textarea>
-                </label>
-                <label>Puntuacion
-                    <input type="number" className='input-review' ref={refPuntuacion} />
-                </label>
-            
-                <button className="review-nutton" onClick={()=>handleReview()}></button>
+                    <div className='review-textarea'>
+                        <p>Review:</p>
+                        <textarea className='text-area' cols="30" rows="10" ref={refText}></textarea>
+                    </div>
+                
+                    <div className='review-score'>
+                        <input placeholder='Puntuación' type="number" className='input-review' ref={refPuntuacion} />
+                        <button className="review-button" onClick={()=>handleReview()}>Create</button>
+                    </div>
+                
+                    
                
                 </div>
             </figure>

@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useAuth } from '../../context/AuthContext'
 import { Navigate } from 'react-router-dom'
 import { forgotPassword } from '../../services/user.service'
+import "./ForgotPassword.css";
 
 const ForgotPassword = () => {
 
@@ -56,7 +57,7 @@ const ForgotPassword = () => {
           </div>
 
           <p className="bottom-text">
-            <small>Enter your email to send you the new password </small>
+            <small><strong>Enter your email to send you the new password</strong></small>
           </p>
         </form>
       </div>
