@@ -5,7 +5,7 @@ export const PrintEvent = ({data}) => {
     const {name, description, hora, location,_id} = data
     console.log("name",name)
     return (
-        <>
+        <div>
         {data.data.map((element)=>(
         <div key={element._id} className="event-container">
         <h2>{element.name}</h2>
@@ -23,6 +23,6 @@ export const PrintEvent = ({data}) => {
         
         }
         
-        </>
+        </div>
     )
 }
