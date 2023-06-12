@@ -15,19 +15,7 @@ const Profile = () => {
 
   return (
     <div className='profile-container'>
-      <div className="top-bar">
-        <p>Hotel Castefa</p>
-        <div className="buttons-container">
-         <div>
-         <button className='button-nav'>Home</button>
-          <button className='button-nav'>Events</button>
-         </div>
-          <div>
-          <button className='button-nav'>Perfil</button>
-          <button className='button-nav'>Logout</button>
-          </div>
-        </div>
-      </div>
+      
       <h2>Perfil</h2>
       <div className="profile-details">
         <div className="profile-image">

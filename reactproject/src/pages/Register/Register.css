@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
     justify-content: center;
 }
 
@@ -30,7 +31,7 @@
 #button-register-two {
     margin: 0 auto;
     margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 #button-register-two:hover {
