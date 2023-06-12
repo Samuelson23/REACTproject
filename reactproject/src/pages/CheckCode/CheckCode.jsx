@@ -17,7 +17,7 @@ const CheckCode = () => {
 
   const formSubmit = async (formData) => {
     console.log("alluser",allUser)
-    console.log("email", allUser.user.email)
+    
     if(userLocal == null){
       const customFormData = {
         confirmationCode:parseInt(formData.confirmationCode),

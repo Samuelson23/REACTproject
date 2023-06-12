@@ -1,5 +1,6 @@
 import axios from "axios";
 import { API } from "./service.config";
+import { updateToken } from "../utils/updateToken";
 
 //Nos traemos el servicio (API) para crear cada uno de los servicios que tiene que hacer nuestra pagina
 //(crear usuario, cambiar password, checkear codigo, login...etc)
@@ -81,7 +82,11 @@ export const updateUser = async (dataForm) => {
 
 // ADD TO EVENT ---------------
 export const addToEvent = async (dataForm) => {
-  return API.post("/user/addtoEvent", dataForm)
+  return API.post("/user/addtoEvent", dataForm, {
+    headers: {
+      Authorization: `Bearer ${updateToken()}`,
+    },
+  })
     .then((res) => res)
     .catch((error) => {
       return error;
@@ -104,7 +109,7 @@ export const getByIdUser = async (id) => {
     });
 };
 
-export const getAllEvents = async () => {
+export const getAllUser = async () => {
   return API.get("/user")
     .then((res) => res)
     .catch((error) => {

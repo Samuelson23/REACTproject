@@ -29,7 +29,7 @@ const Login = () => {
 
   if (loginOk) {
     if (resp.data.user.check == false) {
-      return <Navigate to="/verifyCode" />;
+      return <Navigate to="/checkCode" />;
     } else {
       return <Navigate to="/dashboard" />;
     }

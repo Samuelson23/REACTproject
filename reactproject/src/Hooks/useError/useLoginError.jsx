@@ -21,6 +21,9 @@ const useLoginError = (res, setLoginOk, userLogin) => {
             email: res.data.user.email,
             image: res.data.user.image,
             check: res.data.user.check,
+            events: res.data.user.events,
+            reviews: res.data.user.reviews,
+            id: res.data.user._id
           };
         const dataString = JSON.stringify(dataCustom)
         userLogin(dataString)
