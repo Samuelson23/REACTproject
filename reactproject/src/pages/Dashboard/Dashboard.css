@@ -6,6 +6,12 @@
   justify-content: center;
   text-align: center;
 }
+.dashboard-page h1{
+  display:flex;
+  flex-wrap: wrap;
+
+}
+
 
 .div-container {
   display: flex;
@@ -45,6 +51,13 @@
   .dashboard-page {
     font-size: 6vw;
   }
+  .dashboard-page h1{
+font-size: 50px;
+margin:30px;
+
+  }
+
+
 
   .div-container {
     flex-wrap: wrap; 
