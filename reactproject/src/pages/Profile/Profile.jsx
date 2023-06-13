@@ -90,7 +90,7 @@ const Profile = () => {
                 /></label>
         </div>
 
-        <button type="submit" disabled={send}>UPDATE</button>
+        <button className="button" type="submit" disabled={send}>UPDATE</button>
 
         <div className="change-password">
           <p>¿Quieres cambiar la contraseña?</p>
