@@ -1,12 +1,20 @@
 .card-container {
-  max-width: 600px;
+  width: 60vw;
   display: flex;
   flex-wrap: wrap;
   padding: 40px;
   gap: 20px;
 }
 
+.divEvents{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .event-container {
+  width: 100%;
   padding: 20px;
   gap: 10px;
   display: flex;
@@ -23,6 +31,16 @@
   font-size: 40px;
 }
 
+.botonCrearEv{
+  margin-top:15px;
+  width: 120px;
+  height: 40px;
+  background-color: rgb(178, 178, 178);
+}
+.botonCrearEv:hover{
+  background-color: rgb(87, 193, 54);
+  transform: scale(1.05);
+}
 .events-support {
   max-width: 700px;
   margin-top: 30px;

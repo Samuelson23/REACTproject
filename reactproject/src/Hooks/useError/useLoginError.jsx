@@ -23,7 +23,8 @@ const useLoginError = (res, setLoginOk, userLogin) => {
             check: res.data.user.check,
             events: res.data.user.events,
             reviews: res.data.user.review,
-            id: res.data.user._id
+            id: res.data.user._id,
+            role: res.data.user.role,
           };
         const dataString = JSON.stringify(dataCustom)
         userLogin(dataString)
