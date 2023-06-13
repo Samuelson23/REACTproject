@@ -70,7 +70,7 @@ const ChangePassword = () => {
                     autoComplete="false"
                     {...register("password", { required: true })}
                 /></label>
-                <label><p>New password:</p>
+                <label className='input-container'><p>New password:</p>
                 <input
                     className="input_user"
                     type="password"
@@ -79,7 +79,7 @@ const ChangePassword = () => {
                     autoComplete="false"
                     {...register("newPassword", { required: true })}
                 /></label>
-                <label><p>Confirm password:</p>
+                <label className='input-container'><p>Confirm password:</p>
                 <input
                     className="input_user"
                     type="password"
