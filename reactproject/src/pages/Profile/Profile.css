@@ -15,14 +15,22 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 30vw;
+  height: 60vh;
 }
 
 .profile-field {
   display: flex;
   flex-direction: column;
   gap: 7px;
+  width: 100%;
+  height: 50px;
 }
 
+.profile-field label{
+  display:flex;
+  flex-direction: column;
+}
 .change-password {
   display: flex;
   align-items: center;
@@ -31,11 +39,11 @@
   gap: 10px;
 }
 
-.profile-field > input:focus {
+.profile-field label input:focus {
   outline: none;
 }
 
-.profile-field > input {
+.profile-field label input {
   background-color: white;
   color: black;
   transition: box-shadow 0.3s;
@@ -43,17 +51,23 @@
   height: 25px;
 }
 
-.profile-field > input:hover {
+.profile-field label input:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.change-password > button {
+.profile-details  button {
   width: 180px;
   height: 35px;
   border: none;
 }
 
-.change-password > button:hover {
+.change-password  button {
+  width: 180px;
+  height: 35px;
+  border: none;
+}
+
+.change-password  button:hover {
   cursor: pointer;
   background-color: #CCCC;
 }
