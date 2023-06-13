@@ -61,7 +61,7 @@ const ChangePassword = () => {
         <h3>CHANGE PASSWORD</h3>
         <form className='form-register' onSubmit={handleSubmit(formSubmit)}> 
             <div className="inputContainer">
-                <label>Old password:
+                <label className='input-container'><p>Old password:</p>
                 <input
                     className="input_user"
                     type="password"
@@ -70,7 +70,7 @@ const ChangePassword = () => {
                     autoComplete="false"
                     {...register("password", { required: true })}
                 /></label>
-                <label>New password:
+                <label><p>New password:</p>
                 <input
                     className="input_user"
                     type="password"
@@ -79,7 +79,7 @@ const ChangePassword = () => {
                     autoComplete="false"
                     {...register("newPassword", { required: true })}
                 /></label>
-                <label>Confirm password:
+                <label><p>Confirm password:</p>
                 <input
                     className="input_user"
                     type="password"
