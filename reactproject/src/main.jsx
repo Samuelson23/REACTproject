@@ -19,6 +19,7 @@ import ProtectedCheckChildren from './components/Protected/ProtectedCheckChildre
 import { ProtectedGeneral } from './components/Protected/ProtectedGeneral.jsx'
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword.jsx'
 import ChangePassword from './pages/ChangePassword/ChangePassword.jsx'
+import CreateEvent from './pages/CreateEvent/CreateEvent.jsx'
 
 
 
@@ -39,11 +40,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/events" element={<Events />}>
             <Route index element={<AllEvents/>}/>
             <Route path="/events/:id" element={<EventById/>}/>
+            <Route path="/events/createEvent" element={<CreateEvent/>}/>
             
 
           </Route>
           <Route path="/login" element={<Login />} />
-          <Route path="/login" element={<Login />} />
+          
           <Route path="/register" element={<Register/>}/>
 
           <Route path="/checkCode" element={

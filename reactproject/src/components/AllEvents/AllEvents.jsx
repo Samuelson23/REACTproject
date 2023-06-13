@@ -4,10 +4,12 @@ import { PrintEvent } from '../Print/Printeventos'
 import "./Events.css"
 import { getAllEvents } from '../../services/event.service'
 import { useAuth } from '../../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const AllEvents = () => {
+  const navigate = useNavigate()
   const {user} = useAuth()
   const [resp,setResp] = useState()
   const [event, setEvent] =useState()
@@ -34,7 +36,7 @@ const AllEvents = () => {
     <div className="divEvents">
       <h1 className='titleEvent'>EVENTOS</h1>
       {
-        (user.role=="admin") ? <button className="botonCrearEv">NEW EVENT</button> : null
+        (user.role=="admin") ? <button className="botonCrearEv" onClick={()=>navigate("/events/createEvent")}>NEW EVENT</button> : null
       }
       <div className="divData">
         <h2>

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useAuth } from '../../context/AuthContext'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { forgotPassword } from '../../services/user.service'
 import "./ForgotPassword.css";
+import useForgotPasswordError from '../../Hooks/useError/useForgotPasswordError'
 
 const ForgotPassword = () => {
-
+    const navigate = useNavigate()
     const { register, handleSubmit } = useForm();
     const [resp, setResp] = useState({});
     const [send, setSend] = useState(false);
@@ -20,9 +21,16 @@ const ForgotPassword = () => {
   };
 
   useEffect(()=>{
-    console.log(resp)
+    useForgotPasswordError(resp, setForgetOk)
   },[resp])
 
+  console.log("forget",forgetOk)
+  if(forgetOk){
+     return <Navigate to="/login"/>
+  }
+ //(forgetOk) && navigate("/login")
+
+   
   return (
     <>
       <div className="divFormulario">
