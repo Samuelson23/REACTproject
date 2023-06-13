@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import { changePassword } from '../../services/user.service'
 import { useNavigate } from 'react-router-dom'
 import usePasswordError from '../../Hooks/useError/usePasswordError'
+import "./ChangePassword.css";
 
 const ChangePassword = () => {
     const {register,handleSubmit} = useForm()
