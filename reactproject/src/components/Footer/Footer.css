@@ -1,7 +1,7 @@
 footer {
   background-color: #063954;
   color: #fff;
-  width: 100%;
+  width: 100vw;
   height: 10vh;
 }
 
@@ -17,8 +17,4 @@ footer {
   text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-  .footer {
-    position: static;
-  }
-}
+
