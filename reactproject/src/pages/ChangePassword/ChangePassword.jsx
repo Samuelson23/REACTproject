@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import { changePassword } from '../../services/user.service'
 import { useNavigate } from 'react-router-dom'
 import usePasswordError from '../../Hooks/useError/usePasswordError'
+import "./ChangePassword.css";
 
 const ChangePassword = () => {
     const {register,handleSubmit} = useForm()
@@ -60,7 +61,7 @@ const ChangePassword = () => {
         <h3>CHANGE PASSWORD</h3>
         <form className='form-register' onSubmit={handleSubmit(formSubmit)}> 
             <div className="inputContainer">
-                <label>Old password:
+                <label className='input-container'><p>Old password:</p>
                 <input
                     className="input_user"
                     type="password"
@@ -69,7 +70,7 @@ const ChangePassword = () => {
                     autoComplete="false"
                     {...register("password", { required: true })}
                 /></label>
-                <label>New password:
+                <label className='input-container'><p>New password:</p>
                 <input
                     className="input_user"
                     type="password"
@@ -78,7 +79,7 @@ const ChangePassword = () => {
                     autoComplete="false"
                     {...register("newPassword", { required: true })}
                 /></label>
-                <label>Confirm password:
+                <label className='input-container'><p>Confirm password:</p>
                 <input
                     className="input_user"
                     type="password"
